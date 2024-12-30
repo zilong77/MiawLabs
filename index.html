@@ -5,11 +5,28 @@
   <title>
    MiawLabs
   </title>
-  
+  <script src="https://cdn.tailwindcss.com">
+  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  
-     <link rel="stylesheet" href="style.css">
-</head>
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+     const toggleButton = document.getElementById('toggleButton');
+     const htmlElement = document.documentElement;
+
+     toggleButton.addEventListener('click', function () {
+       htmlElement.classList.toggle('dark');
+       const icon = toggleButton.querySelector('i');
+       if (htmlElement.classList.contains('dark')) {
+         icon.classList.remove('fa-sun');
+         icon.classList.add('fa-moon');
+       } else {
+         icon.classList.remove('fa-moon');
+         icon.classList.add('fa-sun');
+       }
+     });
+   });
+  </script>
+ </head>
  <body class="bg-[#F2F9FF] font-sans dark:bg-gray-900 dark:text-white">
   <div class="flex">
    <!-- Sidebar -->
